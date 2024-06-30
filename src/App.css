@@ -59,11 +59,55 @@ a {
 .img-box {
     --box-width: 30rem;
     --box-height: 20rem;
+    --frag-width: calc(var(--box-width) / var(--col));
+    --frag-height: calc(var(--box-height) / var(--row));
+    /* --img-url: url('./img/panorama/panorama1.jpg'); */
 
     display: flex;
     flex-wrap: wrap;
-    width: var(--box-width);
+    width: calc(var(--box-width));
     height: var(--box-height);
     box-sizing: border-box;
-    border: 1px solid var(--color-indigo);
+    /* border: 1px solid var(--color-indigo); */
 }
+
+.fragment {
+    --x-offset: calc(var(--x) * var(--frag-width) * -1);
+    --y-offset: calc(var(--y) * var(--frag-height) * -1);
+    --rotateX: rotateX(0);
+    --rotateY: rotateY(0);
+
+    width: var(--frag-width);
+    height: var(--frag-height);
+    /* sborder: 1px solid var(--color-indigo); */
+    box-sizing: border-box;
+    background-image: var(--img-url);
+    background-position: var(--x-offset) var(--y-offset);
+    background-size: var(--box-width) var(--box-height);
+    background-repeat: no-repeat;
+    /* will-change: none; */
+    backface-visibility: hidden;
+    transform: var(--rotateX) var(--rotateY);
+    animation: flip var(--duration) ease-in-out var(--delay) forwards;
+}
+
+@keyframes flip {
+    0% {
+        transform: var(--rotateX) var(--rotateY) scale(0.8); 
+        opacity: 0;
+    }
+    50% {
+        transform: rotateX(0) rotateY(0) scale(0.8); 
+        opacity: 1;
+    }
+    80% {
+        transform: rotateX(0) rotateY(0) scale(1);
+    }
+    100% {
+        transform: unset; 
+        scale: none;
+        backface-visibility: initial;
+        opacity: initial;
+    }
+}
+

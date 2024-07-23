@@ -1,13 +1,14 @@
 import React from 'react';
 import { NavLink } from "react-router-dom"; 
 import Logo from "../img/nordic-visit-logo.png";
+import Destination from '../pages/Destination';
 
 const Header: React.FC = () => {
     //const logo = require("../img/nordic-visit-logo.png");
 
     return (
         <div className='mx-auto'>
-            <nav className="nav container">
+            <nav className="nav">
                 <NavLink to="/" className="nav__logo">
                     <img className="size-16" src={Logo} alt="logo"/>
                 </NavLink>
@@ -15,12 +16,12 @@ const Header: React.FC = () => {
                 <div className={"nav__menu"} id="nav-menu">
                     <ul className="nav__list">
                         <li className="nav_item">
-                            <NavLink to="/" className="nav__link">
+                            <NavLink to="/destination" className="nav__link">
                                 Destination
                             </NavLink>
                         </li>
                         <li className="nav_item">
-                            <NavLink to="/" className="nav__link dropdown">
+                            <NavLink to="/experience" className="nav__link dropdown">
                                 <button className="dropdown-btn">
                                     Experience
                                 </button>
@@ -44,17 +45,17 @@ const Header: React.FC = () => {
                             </NavLink>
                         </li>
                         <li className="nav_item">
-                            <NavLink to="/" className="nav__link">
+                            <NavLink to="/Transportation" className="nav__link">
                                 Transportation
                             </NavLink>
                         </li>
                         <li className="nav_item">
-                            <NavLink to="/" className="nav__link">
+                            <NavLink to="/Accomodation" className="nav__link">
                                 Accommodation
                             </NavLink>
                         </li>
                         <li className="nav_item">
-                            <NavLink to="/" className="nav__link">
+                            <NavLink to="/ContactUs" className="nav__link">
                                 Contact us
                             </NavLink>
                         </li>

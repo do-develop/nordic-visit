@@ -1,4 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *{
     padding: 0;
@@ -111,3 +114,165 @@ a {
     }
 }
 
+/* ======================================================= */
+/* EXPERIENCE */
+/* ======================================================= */
+.text-wave {
+    color: #fff;
+	font-size: 3.5em;
+	position: absolute;
+}
+
+.text-wave:nth-child(1) {
+	color: var(--color-purple);
+	-webkit-text-stroke: 1px var(--color-purple);
+}
+
+.text-wave:nth-child(2) {
+	color: var(--color-blue);
+	animation: wave 4s ease-in-out infinite;
+}
+
+@keyframes wave {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+/* ======================================================= */
+/* CONTACT US */
+/* ======================================================= */
+
+.contactus input[type='text'], input[type='email']{
+    border: 1px solid var(--color-grey);
+    border-radius: 0.3em;
+    padding: 0.3em;
+    margin: 0.2em;
+    width: 50%;
+}
+
+.contactus input[type='radio']{
+    margin-right: 0.8em;
+}
+
+.contactus input[type='range']{
+    width: 85%;
+    margin: 0.2em;
+}
+
+.contactus input[type='datetime-local']{
+    display: inline;
+    border: 1px solid var(--color-grey);
+    border-radius: 0.3em;
+    padding: 0.3em;
+}
+
+.contactus select {
+    border: 1px solid var(--color-grey);
+    border-radius: 0.3em;
+    padding: 0.3em;
+}
+
+.contactus textarea {
+    width: 100%;
+    padding: 0.3em;
+}
+
+.contactus table tr td {
+    vertical-align: top;
+    padding-bottom: 0.5em;
+}
+
+.gradient-color {
+    background: linear-gradient(-45deg, var(--color-skyblue), var(--color-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-btn {
+    background: var(--color-indigo);
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    margin: 0.7em 1em 0 0;
+}
+
+/* ======================================================= */
+/* ACCOMODATION */
+/* ======================================================= */
+
+.slider {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 15%;
+    right: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .left-arrow {
+    position: absolute;
+    top: 15%;
+    left: 32px;
+    font-size: 3rem;
+    color: #000;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .slide {
+    position: absolute;
+    opacity: 0;
+    transition-duration: 1s ease;
+    top: 0;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+  }
+
+  .slide-wrapper {
+    position: absolute;
+    width: 100vw;
+    left: calc(50% - 12em);
+    top: 20%;
+  }

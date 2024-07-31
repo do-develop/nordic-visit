@@ -14,17 +14,17 @@ interface TransportationProps {
 
 const TransportationItem: React.FC<TransportationProps> = ({ title, description, img, content }) => {
     return (
-        <div className=''>
+        <div className='xl:h-[38rem] lg:h-[42rem] md:h-[40rem] w-4/5 flex flex-col justify-center items-center m-2 p-4 border rounded-md border-color-blue'>
             <img src={img} alt={title} className='rounded-md w-80 h-60 object-cover'/>
-            <div className="title text-justify">{title}</div>
-            <p>{description}</p>
-            {content}
+            <div className="title text-justify font-semibold pt-2 text-lg">{title}</div>
+            <p className="p-2 text-justify">{description}</p>
+            <div className="text-sm">{content}</div>
         </div>
     );
 };
 
 const AirplaneContent = () => (
-    <table border={1} align="center">
+    <table align="center">
       <thead>
         <tr>
           <th>The airlines going to Scandinavia</th>
@@ -78,59 +78,56 @@ const AirplaneContent = () => (
   
 const BoatContent = () => (
     <table border={1} align="center">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th colSpan={2}>01 Apr -<br /> 31 May</th>
-          <th colSpan={2}>01 Jun -<br /> 31 Aug</th>
-          <th colSpan={2}>01 Sep -<br /> 31 Oct</th>
-          <th colSpan={2}>01 Nov -<br /> 31 Mar</th>
-        </tr>
-        <tr>
-          <th>Port</th>
-          <th>Arrive</th>
-          <th>Depart</th>
-          <th>Arrive</th>
-          <th>Depart</th>
-          <th>Arrive</th>
-          <th>Depart</th>
-          <th>Arrive</th>
-          <th>Depart</th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
-          <td data-th="Port"><strong>Bergen</strong></td>
-          <td data-th="1 Apr - 31 May : Arrive">14:30</td>
-          <td data-th="1 Apr - 31 May : Depart">21:30</td>
-          <td data-th="1 Jun - 31 Aug : Arrive">14:30</td>
-          <td data-th="1 Jun - 31 Aug : Depart">21:30</td>
-          <td data-th="1 Sep - 31 Oct : Arrive">14:30</td>
-          <td data-th="1 Sep - 31 Oct : Depart">21:30</td>
-          <td data-th="1 Nov - 31 Mar : Arrive">14:30</td>
-          <td data-th="1 Nov - 31 Mar : Depart">21:30</td>
+          <td>
+            <a href="https://www.hurtigruten.com/en">
+              <span>Hurtigruten</span>
+            </a>
+          </td>
+          <td>
+            Norwegian Fjords and Northern Lights Cruises
+          </td>
         </tr>
         <tr>
-          <td data-th="Port"><strong>Flor&oslash;</strong></td>
-          <td data-th="1 Apr - 31 May : Arrive">03:30</td>
-          <td data-th="1 Apr - 31 May : Depart">03:40</td>
-          <td data-th="1 Jun - 31 Aug : Arrive">03:30</td>
-          <td data-th="1 Jun - 31 Aug : Depart">03:40</td>
-          <td data-th="1 Sep - 31 Oct : Arrive">03:30</td>
-          <td data-th="1 Sep - 31 Oct : Depart">03:40</td>
-          <td data-th="1 Nov - 31 Mar : Arrive">03:30</td>
-          <td data-th="1 Nov - 31 Mar : Depart">03:40</td>
+          <td>
+            <a href="https://www.royalcaribbean.com/baltic-cruises">
+              <span>Royal Caribbean</span>
+            </a>
+          </td>
+          <td>
+            The Baltic Sea and Scandinavian Cruises
+          </td>
         </tr>
         <tr>
-          <td data-th="Port"><strong>Torvik</strong></td>
-          <td data-th="1 Apr - 31 May : Arrive">08:30</td>
-          <td data-th="1 Apr - 31 May : Depart">08:40</td>
-          <td data-th="1 Jun - 31 Aug : Arrive">08:30</td>
-          <td data-th="1 Jun - 31 Aug : Depart">08:40</td>
-          <td data-th="1 Sep - 31 Oct : Arrive">08:30</td>
-          <td data-th="1 Sep - 31 Oct : Depart">08:40</td>
-          <td data-th="1 Nov - 31 Mar : Arrive">08:30</td>
-          <td data-th="1 Nov - 31 Mar : Depart">08:40</td>
+          <td>
+            <a href="https://www.celebritycruises.com/destinations/european-cruises/scandinavia-cruise/">
+              <span>Celebrity Cruises</span>
+            </a>
+          </td>
+          <td>
+            Discover Historic European Wonders on a Scandinavia Cruise
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.princess.com/en-int/cruise-destinations/europe-cruises/scandinavia-baltics">
+              <span>Princess</span>
+            </a>
+          </td>
+          <td>
+            Unpack once and visit seven different Scandinavian countries
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.vikingcruises.co.uk/oceans/cruise-destinations/scandinavia/index.html">
+              <span>Viking Cruises</span>
+            </a>
+          </td>
+          <td>
+            Discover the world's most beautiful and historic cities, from Stockholm to Bergen
+          </td>
         </tr>
       </tbody>
     </table>
@@ -245,7 +242,7 @@ const BusContent = () => (
 const Transportation = () => {
     return (
       <div className="h-full">
-        <section className="transport grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="transport grid lg:grid-cols-2 md:grid-cols-1 place-items-center">
 
             <TransportationItem
               title="By airplane"
@@ -255,7 +252,7 @@ const Transportation = () => {
             />
             <TransportationItem
               title="Responsible cruising"
-              description="Enjoy the majestic landscape of the Norwegian coastline between Bergen and Kirkenes on more eco-friendly cruises by well-known operators that work closely with the local communities. Both on board the ships and when you disembark to explore, you get to savour the taste of Norway."
+              description="Enjoy the majestic landscape of the Norwegian coastline between Bergen and Kirkenes on more eco-friendly cruises by well-known operators that work closely with the local communities. Both on board the ships and when you disembark to explore, you get to savour the taste of Scandinavia."
               img={Boat}
               content={<BoatContent />}
             />

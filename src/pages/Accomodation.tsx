@@ -50,7 +50,7 @@ const Accomodation = () => {
     return (
 
         <>
-        <div className="flex items-center justify-center text-xl font-semibold mb-8 text-center text-color-purple">
+        <div className="flex items-center justify-center text-xl font-semibold mb-8 text-center text-color-purple mt-12">
             Explore the charm of Scandinavian accommodations, the location is shown on the map to your right. <br/>
             The unique features and scenic beauty of these locations will captivate you.
         </div>

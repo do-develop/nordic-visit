@@ -9,12 +9,12 @@ const ContactUs: React.FC = () => {
 
     return (
         <>
-        <div className='contactus justify-center w-3/5 mx-auto'>
+        <div className='contactus flex flex-col justify-center w-1/2 mx-auto'>
             <h1 className='text-2xl font-extrabold gradient-color'>GET IN TOUCH WITH ONE OF OUR LOCAL TRAVEL EXPERTS</h1>        
             
             <form onSubmit={handleSubmit}>
-            <p className=' w-4/5'>Whatever your needs, we are here to help. If you have any questions about our packages or services, or want to customise a tour, please do not hesitate to contact us.</p>
-            <fieldset className='flex flex-col w-4/5 border-2 border-color-grey p-3'>
+            <p className='w-full'>Whatever your needs, we are here to help. If you have any questions about our packages or services, or want to customise a tour, please do not hesitate to contact us.</p>
+            <fieldset className='flex flex-col w-full border-2 border-color-grey p-3'>
                 <legend className='text-lg font-bold text-color-indigo'>Contact detail</legend>
                 <table>
                     <tr >
@@ -57,7 +57,7 @@ const ContactUs: React.FC = () => {
                 
             </fieldset>
 
-            <fieldset className='inline-block w-4/5 border-2 border-color-grey p-3'>
+            <fieldset className='inline-block w-full border-2 border-color-grey p-3'>
                 <legend className='text-lg font-bold text-color-indigo'>Query</legend>
 
                 <table>
@@ -103,8 +103,11 @@ const ContactUs: React.FC = () => {
                 </table>
             </fieldset>
             <br/>
-            <input className="form-btn" type="submit" value="Send my query"></input>
-            <input className="form-btn" type="reset" value="Clear form"></input>
+            <div className='mb-2'>
+                <input className="form-btn" type="submit" value="Send my query"></input>
+                <input className="form-btn" type="reset" value="Clear form"></input>
+            </div>
+            
             </form>  
         </div>
         </>

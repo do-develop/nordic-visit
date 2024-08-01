@@ -28,7 +28,7 @@ const Home = () => {
     
             {/* Introduction of the travel agency */}
             <section>
-                <div className="intro">
+                <div className="intro mt-6">
                     <h1 className="text-primary">Achieve your holiday dream in Nordic countries <EmojiSunglasses /></h1>
                     <h3 className="text-primary"><BalloonHeartFill />Authentic, original and independent tour guidelines </h3>
 
